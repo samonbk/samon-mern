@@ -1,17 +1,16 @@
 {
-    "version": 2,
-    "projects": {
-      "backend": {
-        "src": "./backend",
-        "functions": {
-          "api/index.js": { "runtime": "nodejs" }
-        }
-      },
-      "frontend": {
-        "src": "./frontend",
-        "buildCommand": "npm run build",
-        "outputDirectory": "./frontend/build"
-      }
+  "version": 2,
+  "backend": {
+    "src": "./backend",
+    "functions": {
+      "api/index.js": { "runtime": "nodejs" }
     }
+  },
+  "frontend": {
+    "src": "./frontend",
+    "buildCommand": "npm run build",
+    "outputDirectory": "./frontend/build"
   }
+}
+  
   

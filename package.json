@@ -2,6 +2,7 @@
   "name": "learn-mern",
   "version": "1.0.0",
   "main": "index.js",
+  "proxy": "http://localhost:5000",
   "scripts": {
     "dev": "nodemon backend/server.js",
     "start": "react-scripts start",
