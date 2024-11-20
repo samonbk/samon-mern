@@ -20,17 +20,33 @@ export const useProductStore = create((set) => ({
     set((state) => ({ products: [...state.products, data.data] }));
     return { success: true, message: "Product create successfull" };
   },
+  // fetchProduct: async () => {
+  //   try {
+  //     const res = await fetch("api/products");
+  //     if (!res.ok)
+  //       throw new Error(`Failed to fetch products: ${res.statusText}`);
+
+  //     const data = await res.json();
+  //     set({ products: data.data }); // Remove the extra brackets here
+  //   } catch (error) {
+  //     console.error("Error fetching products:", error);
+  //     set({ products: [] }); // Or handle it according to your application's needs
+  //   }
+  // },
   fetchProduct: async () => {
     try {
-      const res = await fetch("api/products");
-      if (!res.ok)
-        throw new Error(`Failed to fetch products: ${res.statusText}`);
-
+      const apiUrl = `${process.env.REACT_APP_API_URL || ""}/api/products`; // Use full URL in deployment
+      const res = await fetch(apiUrl);
+  
+      if (!res.ok) {
+        throw new Error(`Failed to fetch products: ${res.status} ${res.statusText}`);
+      }
+  
       const data = await res.json();
-      set({ products: data.data }); // Remove the extra brackets here
+      set({ products: data.data }); // Assuming `data.data` contains the product array
     } catch (error) {
       console.error("Error fetching products:", error);
-      set({ products: [] }); // Or handle it according to your application's needs
+      set({ products: [] }); // Default to an empty array on error
     }
   },
   updateProduct: async (updatedProduct) => {
