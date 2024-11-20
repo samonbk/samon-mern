@@ -9,7 +9,7 @@ export const useProductStore = create((set) => ({
       return { success: false, message: "Please fill alls" };
     }
 
-    const res = await fetch("api/products", {
+    const res = await fetch(`${process.env.REACT_APP_API_URL || ""}/api/products`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -59,7 +59,7 @@ export const useProductStore = create((set) => ({
     }
 
     const res = await fetch(
-      `api/products/${updatedProduct._id}`,
+      `${process.env.REACT_APP_API_URL || ""}/api/products/${updatedProduct._id}`,
       {
         method: "PUT",
         headers: {
@@ -90,7 +90,7 @@ export const useProductStore = create((set) => ({
       return { success: false, message: "Product ID is required" };
     }
 
-    const res = await fetch(`api/products/${productId}`, {
+    const res = await fetch(`${process.env.REACT_APP_API_URL || ""}/api/products/${productId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
