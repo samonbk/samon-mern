@@ -17,7 +17,6 @@ const LoginPage = () => {
   }, [fetchUser]);
 
   const navigate = useNavigate();
-  const [loguser, setLoguser] = useState({});
 
   const onSubmit = (event) => {
     event.preventDefault();
