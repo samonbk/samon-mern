@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useLoged, useUser } from "../Store/Store";
 import { useEffect } from "react";
 
 const Navbar = () => {

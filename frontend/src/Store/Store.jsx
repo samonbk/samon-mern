@@ -73,7 +73,7 @@ export const useProductStore = create((set) => ({
 
   fetchProduct: async () => {
     try {
-      const apiUrl = "http://samon-mern.vercel.app";
+      const apiUrl = "https://samon-mern.vercel.app";
 
       const res = await fetch(apiUrl + "/api/products");
 
