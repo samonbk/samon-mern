@@ -9,6 +9,7 @@ import Home from "./Page/Home";
 import CreatePage from "./Page/CreatePage";
 import Layout from "./Layout";
 import UpdatePage from "./Page/UpdatePage";
+import LoginPage from "./Page/LoginPage";
 
 function App() {
   const router = createBrowserRouter(
@@ -17,6 +18,7 @@ function App() {
         <Route index path="/" element={<Home />} />
         <Route path="create" element={<CreatePage />} />
         <Route path="update/:id" element={<UpdatePage />} />
+        <Route path="login" element={<LoginPage />} />
       </Route>
     )
   );

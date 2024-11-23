@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
-import { useProductStore } from "../Store/Store";
+import { useProductStore, useUserStore } from "../Store/Store";
 import { FaRegEdit } from "react-icons/fa";
 import { LuDelete } from "react-icons/lu";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   const { fetchProduct, products, deleteProduct } = useProductStore();
+  const { fetchUser, users } = useUserStore();
   const [deleteId, setDeleteId] = useState("");
+
+  useEffect(() => {
+    fetchUser();
+  }, [fetchUser]);
 
   useEffect(() => {
     fetchProduct();
