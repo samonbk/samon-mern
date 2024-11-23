@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useLoged } from "../Store/Store";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 const Navbar = () => {
   const { loged, checkloged, setLogedIn, setLogedOut } = useLoged();
