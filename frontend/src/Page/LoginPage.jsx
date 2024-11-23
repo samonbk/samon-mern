@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLoged, useUser, useUserStore } from "../Store/Store";
+import { useLoged, useUserStore } from "../Store/Store";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
