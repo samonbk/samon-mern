@@ -10,8 +10,6 @@ const Navbar = () => {
     checkloged();
   }, [checkloged]);
 
-  // console.log(user);
-
   return (
     <>
       <nav className="w-full h-12 bg-slate-500 px-3 fixed top-0 shadow-md">

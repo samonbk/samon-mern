@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { useProductStore } from "../Store/Store";
+import { useEffect, useState } from "react";
+import { useLoged, useProductStore } from "../Store/Store";
+import { useNavigate } from "react-router-dom";
 
 const CreatePage = () => {
   const [newProduct, setNewProduct] = useState({
@@ -7,6 +8,16 @@ const CreatePage = () => {
     price: "",
     image: "",
   });
+
+  const { loged, checkloged } = useLoged();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    checkloged();
+    if (!loged) {
+      navigate("/login");
+    }
+  }, [loged]);
 
   const { createProduct } = useProductStore();
 

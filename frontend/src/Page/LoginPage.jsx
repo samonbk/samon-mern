@@ -52,7 +52,7 @@ const LoginPage = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="flex justify-between gap-2">
+        <div className="flex justify-between gap-2 mt-6">
           <label className="text-gray-300 text-lg" htmlFor="password">
             Password:
           </label>
