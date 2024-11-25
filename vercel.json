@@ -16,6 +16,11 @@
       "dest": "/backend/server.js"
     },
     {
+      "src": "/static/(.*)",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" },
+      "dest": "/frontend/static/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/frontend/index.html"
     }
